@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div></div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+const miso = require('./miso.js').default
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  
+  mounted() {
+    console.log(miso)
+
+    miso.init('http://www.weather.gov/', {
+      isMobile: true
+    });
+    miso.setSize(200, 300)
+    miso.show()
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#chatroomEl {
+  border: 1px solid red;
 }
 </style>

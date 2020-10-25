@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+  <div>
+    <!-- <span>9999999</span>
+    <div @click="prompt">123</div>
+    <input type="text" /> -->
+  </div>
 </template>
 
 <script>
@@ -11,17 +15,27 @@ export default {
   mounted() {
     console.log(miso)
 
-    miso.init('http://www.weather.gov/', {
+    miso.init('https://zh.wikipedia.org/wiki/Wiki', {
       isMobile: true
-    });
-    miso.setSize(200, 300)
+    })
+    // miso.setSize(3000, 3000)
     miso.show()
+  },
+  methods: {
+    prompt() {
+      console.log('hello')
+    }
   }
 }
 </script>
 
 <style>
-#chatroomEl {
-  border: 1px solid red;
-}
+html,body {
+  margin: 0;           
+  padding: 0;
+} 
+/* #chatroomEl {
+  top: 0;
+  left: 0;
+} */
 </style>
